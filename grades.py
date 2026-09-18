@@ -33,6 +33,15 @@ def estadoAcademico(average):
         return "Reprobado"
 
 
+def estadoAsignatura(grade):
+
+    if grade >= minimunPassingGrade:
+        return "Aprobado"
+
+    else:
+        return "Reprobado"
+
+
 def nivelRendimiento(average):
 
     if average <= 69:
@@ -49,6 +58,9 @@ def nivelRendimiento(average):
 
 
 def recomendacion(performance):
+
+    if isinstance(performance, (int, float)):
+        performance = nivelRendimiento(performance)
 
     if performance == "Aprendizaje inicial":
         return "Debe reforzar los contenidos y practicar más."
